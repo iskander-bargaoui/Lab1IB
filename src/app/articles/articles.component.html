@@ -1,0 +1,29 @@
+<h2> Partie 2 : Articles </h2>
+<p><b>Accueil: </b>Liste des Articles</p>
+
+<div> Le nombre total des article affichés est :<input type="number" [(ngModel)]="NombreArticles">
+    <fieldset  *ngFor="let article of listeArticles, let i=index">
+ 
+        <div [ngStyle]="{'background-color':article.categorie=='Education' ? 'blue' : 'transparent'}" 
+ 
+  *ngIf="i<NombreArticles && article.categorie!=='Travail'">
+
+  <legend >{{article.titre}}</legend>
+<table>
+  <tr>
+    <td>Auteur  </td>
+    <td>{{article.auteur}}</td>
+  </tr>
+
+  <tr>
+    <td>Date : </td>
+    <td>{{article.date}}</td>
+  </tr>
+
+  <tr>
+    <td>Contenu   </td>
+    <td>{{article.contenu}}</td>
+  </tr>
+</table>
+</div>
+</fieldset>
